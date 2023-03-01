@@ -5,11 +5,11 @@ import Layout from "./Layout";
 export default function Movie() {
   return (
     <Layout>
-      <div>
+      {/* <div>
         {movieQuotes.map((quote, index) => (
           <div key={index}>{quote}</div>
         ))}
-      </div>
+      </div> */}
     </Layout>
   );
 }

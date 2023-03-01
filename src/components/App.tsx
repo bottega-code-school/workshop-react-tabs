@@ -1,5 +1,4 @@
 import * as React from "react";
-import Home from "./Home";
 import { Route, Switch } from "react-router";
 import Movie from "./Movie";
 import Tech from "./Tech";
