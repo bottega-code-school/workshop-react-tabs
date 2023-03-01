@@ -22,10 +22,11 @@ const StateTab = ({ label, activeTab, onClick }: StateTabProps) => {
 type RouteTabProps = {
   label: string;
   to: string;
+  exact?: boolean;
 };
-const RouteTab = ({ label, to }: RouteTabProps) => {
+const RouteTab = ({ label, to, exact = true }: RouteTabProps) => {
   return (
-    <NavLink activeClassName="active" to={to}>
+    <NavLink className="tab" activeClassName="active" exact={exact} to={to}>
       {label}
     </NavLink>
   );
@@ -65,7 +66,12 @@ const Tabs = ({ tabs, activeTab, onClickTab, variant = "state" }: TabProps) => {
     return (
       <div className="tab-list">
         {routeTabs.map((tab) => (
-          <RouteTab key={tab.to} label={tab.label} to={tab.to} />
+          <RouteTab
+            key={tab.to}
+            label={tab.label}
+            to={tab.to}
+            exact={tab.exact}
+          />
         ))}
       </div>
     );
